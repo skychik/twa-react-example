@@ -7,6 +7,8 @@ import {isInDevMode} from "../utils";
 
 function getInitOptions(isDev: boolean = false): InitOptions {
     if (isDev) {
+        require('dotenv').config()
+
         return {
             debug: true,
         };

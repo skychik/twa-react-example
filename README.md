@@ -4,6 +4,7 @@
 - `vite`
 - `SWC`
 - `@twa.js/sdk-react`
+- `ngrok` and `@mtproto/core` – for developing environment
 
 ## Usage
 ### Dev
