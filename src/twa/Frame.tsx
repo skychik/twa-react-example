@@ -4,6 +4,10 @@ import { FC, ReactNode, useEffect } from "react";
 type Props = {
     children?: ReactNode
 }
+
+/**
+ * Instantiate all useful stuff for TWA, like BackButton, etc.
+ */
 export const TwaFrame: FC<Props> = ({children}) => {
     const backButton = useBackButton();
     const webApp = useWebApp();

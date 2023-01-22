@@ -1,1 +1,1 @@
-export { TwaRootInitializer as TwaInitializer } from './Root'
+export { TwaInitializer } from './TwaInitializer'
