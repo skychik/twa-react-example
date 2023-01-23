@@ -1,8 +1,11 @@
-import {PropsWithChildren} from "react";
-import {useLocalTunnel} from "../hooks/useLocalTunnel";
+import React, {PropsWithChildren} from "react";
+import {TwaFrame} from "./Frame";
+import {TwaLoader} from "./Loader";
 
 export const TwaDev = ({children}: PropsWithChildren) => {
-    useLocalTunnel()
-
-    return <>{children}</>
+    return <TwaLoader>
+        <TwaFrame>
+            {children}
+        </TwaFrame>
+    </TwaLoader>
 }

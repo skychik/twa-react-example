@@ -4,7 +4,6 @@ import {isInDevMode} from "../utils";
 
 export function TwaIsReady({ children }: PropsWithChildren) {
     const webApp = useWebApp();
-    const sdk = useSDK();
 
     useEffect(() => {
         webApp.ready();
@@ -29,7 +28,7 @@ export function TwaLoader({ children }: PropsWithChildren) {
     // Error occurred during SDK init.
     if (error) {
         if (isInDevMode()) {
-            throw error;
+            console.error(error);
         }
 
         return <div>Something went wrong: {(error as any)?.message}</div>;
