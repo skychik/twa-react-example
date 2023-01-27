@@ -1,10 +1,7 @@
-import {createContext, useContext} from 'react';
+import { createRouter } from "@swan-io/chicane";
 
-export type RouterContext = {}
-
-const RouterContext = createContext<RouterContext>({});
-
-export const useRouter = useContext<RouterContext>(RouterContext)
-
-export const RouterConsumer = RouterContext.Consumer;
-export const RouterProvider = RouterContext.Provider;
+export const Router = createRouter({
+    Home: "/",
+    Users: "/users",
+    User: "/users/:userId",
+});

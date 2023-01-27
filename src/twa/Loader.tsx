@@ -29,6 +29,7 @@ export function TwaLoader({ children }: PropsWithChildren) {
     if (error) {
         if (isInDevMode()) {
             console.error(error);
+            console.log(window.location.hash.slice(1))
         }
 
         return <div>Something went wrong: {(error as any)?.message}</div>;

@@ -2,9 +2,11 @@
 
 - `react`
 - `vite`
-- `SWC`
+- `SWC` - bundler and more
 - `@twa.js/sdk-react`
 - `ngrok` – for developing environment
+- `@swan-io/chicane` - router with Typescript
+- `tailwind` - styling framework (opinionated, but I want to use it)
 
 ## Usage
 ### Dev

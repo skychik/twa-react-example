@@ -1,25 +1,19 @@
-import {useState} from 'react'
 import './App.css'
-import {ThemeInfo} from './ThemeInfo';
-import {ButtonLink} from "../twa/twa-router/components/ButtonLink";
+import {Router} from "../twa/twa-router/Router";
+import {Home} from "./Home";
+import {match} from "ts-pattern";
+import {Layout} from "./layout/Layout";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const route = Router.useRoute(["Home", "Users", "User"]);
 
-    return (
-        <div className="App">
-            <h1>Telegram Web App Example</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <ThemeInfo />
-            </div>
-            <ButtonLink isExternal={true} className="read-the-docs" to="https://telegram-web-apps.github.io/twa">
-                Read the docs
-            </ButtonLink>
-        </div>
-    )
+    return <Layout>
+        {match(route)
+            .with({name: "Home"}, () => <Home />)
+            .with({name: "Users"}, () => <h1>Users</h1>)
+            .with({name: "User"}, ({params}) => <h1>User {params.userId}</h1>) // params are strongly typed
+            .otherwise(() => <h1>404</h1>)}
+    </Layout>
 }
 
 export default App
